@@ -1,7 +1,17 @@
 
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../providers/AuthProviders';
 
 const Navbar = () => {
+
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then()
+      .catch(error => console.log(error))
+  }
 
   const navItems = <>
 
@@ -47,7 +57,22 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn btn-outline btn-warning">Log In</a>
+        <div className='flex items-center gap-5'>
+          {user &&
+            <div className="tooltip  tooltip-left mt-3" data-tip={user.displayName}>
+              <button>  <img className='h-12 w-12' src={user?.photoURL} alt="" /> </button>
+            </div>
+          }
+
+
+          {user ?
+            <button onClick={handleLogOut} className="btn">LogOut</button> :
+            <Link to='/login'>
+              <button className="btn">Login</button>
+            </Link>
+
+          }
+        </div>
       </div>
     </div>
   );

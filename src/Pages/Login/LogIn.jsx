@@ -1,52 +1,120 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+
+
+
+import React, { useContext, useState } from 'react';
+import { FaGoogle } from 'react-icons/fa';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { AuthContext } from '../providers/AuthProviders';
 
 const LogIn = () => {
+
+  const [show, setShow] = useState(false);
+  const [error, setError] = useState('');
+
+  const { singIn, setUser, GoogleLogin, GithubLogin } = useContext(AuthContext);
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  console.log(location);
+  const from = location.state?.form?.pathname || '/';
+
+  const handleGoogleLogin = () => {
+    GoogleLogin()
+      .then(result => navigate(from, {
+        replace: true
+      }))
+      .catch(error => console.log(error.message))
+  }
+
+  const handleGithubLogin = () => {
+    GithubLogin()
+      .then(result => navigate(from, {
+        replace: true
+      }))
+      .catch(error => console.log(error.message))
+  }
+
+  const handleLogIn = event => {
+    //reload problem solver jonno
+    event.preventDefault();
+
+
+
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+
+
+
+
+    singIn(email, password)
+      .then(result => {
+        const loggesUser = result.user;
+        console.log(loggesUser);
+
+        setUser(loggesUser);
+
+
+        form.reset();
+        navigate(from, { replace: true })
+      })
+      .catch(error => {
+        setError("Incorrect Password");
+      })
+  }
   return (
-    <div className='mb-10 '>
+    <div className=' p-10 mt-16 md:w-3/4 md:mb-20 md:mt-20 mx-auto
+        '>
+      <div className='flex items-center'>
+        <div>
+          <img className='w-2/3' src="https://img.freepik.com/free-vector/tablet-login-concept-illustration_114360-7883.jpg" alt="" />
+        </div>
+        <div className='w-3/4 bg-slate-100 rounded-xl p-5'>
+          <h3 className='text-3xl font-bold  mb-10 text-center'>Please Login</h3>
 
-      <div>
-        <div className="hero min-h-screen">
-          <div className="hero-content flex-col gap-20 lg:flex-row">
-            <div className="text-center lg:text-left w-1/2 mr-20">
-              <img src="https://img.freepik.com/free-vector/tablet-login-concept-illustration_114360-7893.jpg" alt="" />
+          <form onSubmit={handleLogIn} >
+            <div className="form-control container ">
+              <label className=' text-xl mb-2 w-1/2 ' htmlFor="">Email</label>
+              <input type="text" name='email' placeholder="Enter email" className="input input-bordered input-primary w-full  mb-5" />
+              <label className=' text-xl mb-2 w-1/2' htmlFor="">Password</label>
+              <input type={show ? "text" : "password"} placeholder="Enter password" name='password' className="input input-bordered input-primary w-full  " />
+              <p className='mb-5 text-slate-500' onClick={() => setShow(!show)} >
+                <small>
+                  {
+                    show ? <span>Hide Password</span> : <span>Show Password</span>
+
+                  }
+                </small>
+              </p>
+
+
+
+              <input className='btn btn-wide-full ' type="submit" value="Log In" />
+              <p className='text-red-500'>{error}</p>
+              <p className='sub-title text-center mt-4 font-bold text-gray-500'>
+                New to Food-Corner? <Link to="/signup"><span className='text-black'>Create New account</span></Link>
+
+              </p>
+            </div>
+          </form>
+          <div className='text-center mb-2'>
+            <p className='pb-5 mt-10 font-bold  text-xl text-red-600'>SignUp using</p>
+            <div className='flex gap-4 justify-center'>
+              <button onClick={() => handleGoogleLogin()} className='text-2xl text-green-600'><FaGoogle></FaGoogle> </button>
+
 
             </div>
-            <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-              <div className="card-body">
-                <h1 className="text-3xl font-bold text-center">Login now!</h1>
 
-
-                <form >
-                  <div className="form-control">
-                    <label className="label">
-                      <span className="label-text font-bold">Email</span>
-                    </label>
-                    <input type="email" placeholder="Email"
-                      name="email" className="input input-bordered" />
-                  </div>
-                  <div className="form-control">
-                    <label className="label">
-                      <span className="label-text font-bold">Password</span>
-                    </label>
-                    <input type="password" name="password" placeholder="Password" className="input input-bordered" />
-                    <label className="label">
-                      <a href="#" className="font-bold label-text-alt link link-hover">Forgot password?</a>
-                    </label>
-                  </div>
-                  <div className="form-control mt-6">
-
-                    <input className="btn btn-primary" type="submit" name="login" value="Login" id="" />
-                  </div>
-                </form>
-                <p className="text-center mt-2">New to Toy Center? <Link className="black font-bold ml-1" to="/signup">Sign up</Link></p>
-              </div>
-            </div>
           </div>
+          <ToastContainer />
         </div>
       </div>
     </div>
   );
 };
+
 
 export default LogIn;
