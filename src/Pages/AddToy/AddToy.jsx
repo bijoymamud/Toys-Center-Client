@@ -1,11 +1,48 @@
+import { useContext } from "react";
+import { AuthContext } from "../providers/AuthProviders";
 
 
 const AddToy = () => {
 
+  const { user } = useContext(AuthContext);
 
+  const handleToyInfoSubmit = (event) => {
+    event.preventDefault();
 
+    const form = event.target;
+    const toyName = form.toyName.value;
+    const name = form.name.value;
+    const email = user?.email;
+    const category = form.categories.value;
+    const price = form.price.value;
+    const rating = form.rating.value;
+    const quantity = form.quantity.value;
+    const description = form.description.value;
 
+    const order = {
+      customerName: name,
+      email,
+      toyName,
+      category,
+      rating,
+      price,
+      quantity,
+      description
+    }
+    console.log(order);
 
+    fetch('http://localhost:5000/toyinfo', {
+      method: "POST",
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(order)
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+      })
+  }
 
 
 
@@ -18,7 +55,7 @@ const AddToy = () => {
 
         <div className="card flex-shrink-0 w-full p-10 shadow-2xl bg-base-100">
           <h3 className="text-center">This is Add toy section</h3>
-          <form  >
+          <form onSubmit={handleToyInfoSubmit} >
             <div className="card-body  ">
               <div >
                 <div className='grid grid-cols-2 gap-5 mt-0'>
@@ -26,20 +63,20 @@ const AddToy = () => {
                     <label className="label">
                       <span className="label-text">Name</span>
                     </label>
-                    <input type="text" placeholder="Toy Name" name="name" className="input input-bordered" />
+                    <input type="text" placeholder="Toy Name" name="toyName" className="input input-bordered" />
                   </div>
                   <div className="form-control ">
                     <label className="label">
                       <span className="label-text">Seller Name</span>
                     </label>
-                    <input type="text" placeholder="Seller Name" name="name" className="input input-bordered" />
+                    <input type="text" placeholder="Seller Name" defaultValue={user?.displayName} name="name" className="input input-bordered" />
                   </div>
                   <div className="form-control ">
                     <label className="label">
                       <span className="label-text">Seller Email</span>
                     </label>
                     <input type="email" placeholder="Email"
-                      name='email' className="input input-bordered" />
+                      name='email' defaultValue={user?.email} className="input input-bordered" />
                   </div>
                   <div className="form-control w-full ">
                     <label className="label">
@@ -60,7 +97,7 @@ const AddToy = () => {
                     <label className="label">
                       <span className="label-text">Pice </span>
                     </label>
-                    <input type="number" placeholder="Price"
+                    <input type="number" placeholder="$"
                       name='price' className="input input-bordered" />
                   </div>
                   <div className="form-control ">
@@ -84,13 +121,20 @@ const AddToy = () => {
                     <input type="text"
                       name='description' placeholder="Description" className="input input-bordered" />
                   </div>
+                  <div className="form-control ">
+                    <label className="label">
+                      <span className="label-text">Photo URl</span>
+                    </label>
+                    <input type="text"
+                      name='photo' placeholder="Url" className="input input-bordered" />
+                  </div>
+
+                  <div className="form-control mt-6">
 
 
-                </div>
-                <div className="form-control mt-6">
+                    <input className="btn border-none h-full bg-red-600 text-white" type="submit" value="Place Order" />
+                  </div>
 
-
-                  <input className="btn border-none bg-red-600 text-white" type="submit" value="Place Order" />
                 </div>
 
 
