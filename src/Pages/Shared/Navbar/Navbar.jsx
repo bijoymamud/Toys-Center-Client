@@ -32,6 +32,10 @@ const Navbar = () => {
       <Link to="/addtoy">Add Toy</Link>
 
     </li>
+    <li tabIndex={0}>
+      <Link to="/alltoys">All Toys</Link>
+
+    </li>
 
   </>
   return (

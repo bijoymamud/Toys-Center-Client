@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import Swal from 'sweetalert2';
 import { AuthContext } from "../providers/AuthProviders";
 
 
@@ -18,11 +19,13 @@ const AddToy = () => {
     const rating = form.rating.value;
     const quantity = form.quantity.value;
     const description = form.description.value;
+    const photo = form.photo.value;
 
     const order = {
       customerName: name,
       email,
       toyName,
+      photo,
       category,
       rating,
       price,
@@ -41,6 +44,16 @@ const AddToy = () => {
       .then(res => res.json())
       .then(data => {
         console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            position: 'middle-center',
+            icon: 'success',
+            title: 'Added Successfully',
+            showConfirmButton: true,
+            timer: 1500
+          })
+
+        }
       })
   }
 
@@ -87,7 +100,7 @@ const AddToy = () => {
                       <option disabled selected>Select Categories</option>
                       <option>Remote Control</option>
                       <option>AutoMatic Control</option>
-                      <option>Pussing Cars</option>
+                      <option>Dummy Racing</option>
 
                     </select>
 
