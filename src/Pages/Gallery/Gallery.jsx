@@ -10,7 +10,7 @@ const Gallery = () => {
         <div className='grid grid-cols-3 gap-10 ' >
 
           <div className="card w-96 bg-base-100 shadow-xl">
-            <figure><img src="https://www.littleriders.com.au/assets/full/XMX-615-R.jpg?20230419134613" alt="Shoes" /></figure>
+            <figure><img data-aos="fade-left" src="https://www.littleriders.com.au/assets/full/XMX-615-R.jpg?20230419134613" alt="Shoes" /></figure>
             <div className="card-body">
               <h2 className="card-title">
                 Lamborgini Hygin
@@ -24,7 +24,7 @@ const Gallery = () => {
             </div>
           </div>
           <div className="card w-96 bg-base-100 shadow-xl">
-            <figure><img src="https://cdn11.bigcommerce.com/s-31wmbm/images/stencil/400x600/products/1727/13113/cobra__27713.1669146785.jpg?c=2" alt="Shoes" /></figure>
+            <figure><img data-aos="fade-left" src="https://cdn11.bigcommerce.com/s-31wmbm/images/stencil/400x600/products/1727/13113/cobra__27713.1669146785.jpg?c=2" alt="Shoes" /></figure>
             <div className="card-body">
               <h2 className="card-title">
                 Mirado Panigal
@@ -39,7 +39,7 @@ const Gallery = () => {
             </div>
           </div>
           <div className="card w-96 bg-base-100 shadow-xl">
-            <figure><img src="https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dG95JTIwY2FyfGVufDB8fDB8fHww&w=1000&q=80" alt="Shoes" /></figure>
+            <figure><img data-aos="fade-left" src="https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dG95JTIwY2FyfGVufDB8fDB8fHww&w=1000&q=80" alt="Shoes" /></figure>
             <div className="card-body">
               <h2 className="card-title">
                 Classical Sadan
@@ -53,7 +53,7 @@ const Gallery = () => {
             </div>
           </div>
           <div className="card w-96 bg-base-100 shadow-xl">
-            <figure><img src="https://cdn.pixabay.com/photo/2020/04/24/12/24/model-car-5086647_640.jpg" alt="Shoes" /></figure>
+            <figure><img data-aos="fade-left" src="https://cdn.pixabay.com/photo/2020/04/24/12/24/model-car-5086647_640.jpg" alt="Shoes" /></figure>
             <div className="card-body">
               <h2 className="card-title">
                 Classical Royas
@@ -67,7 +67,7 @@ const Gallery = () => {
             </div>
           </div>
           <div className="card w-96 bg-base-100 shadow-xl">
-            <figure><img src="https://images.pexels.com/photos/381228/pexels-photo-381228.jpeg?cs=srgb&dl=pexels-mike-bird-381228.jpg&fm=jpg" alt="Shoes" /></figure>
+            <figure><img data-aos="fade-left" src="https://images.pexels.com/photos/381228/pexels-photo-381228.jpeg?cs=srgb&dl=pexels-mike-bird-381228.jpg&fm=jpg" alt="Shoes" /></figure>
             <div className="card-body">
               <h2 className="card-title">
                 Sadan Temp
@@ -81,7 +81,7 @@ const Gallery = () => {
             </div>
           </div>
           <div className="card w-96 bg-base-100 shadow-xl">
-            <figure><img src="https://image.made-in-china.com/2f0j00iyRWkNrLCcoY/Kids-Ride-on-Electric-Car-with-Remote-Control-Professional-Manufacture-Cheap-Toys-Car-Kids-Electric-Car-for-Children.webp" alt="Shoes" /></figure>
+            <figure><img data-aos="fade-left" src="https://image.made-in-china.com/2f0j00iyRWkNrLCcoY/Kids-Ride-on-Electric-Car-with-Remote-Control-Professional-Manufacture-Cheap-Toys-Car-Kids-Electric-Car-for-Children.webp" alt="Shoes" /></figure>
             <div className="card-body">
               <h2 className="card-title">
                 Bugati

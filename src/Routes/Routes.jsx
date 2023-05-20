@@ -4,10 +4,14 @@ import About from "../Pages/About/About";
 import AddToy from "../Pages/AddToy/AddToy";
 import AllToys from "../Pages/All Toys/AllToys";
 import Reviews from "../Pages/CustomesRe/Reviews";
+import ConnectUs from "../Pages/GiveMessage/ConnectUs";
 import Home from "../Pages/Home/Home/Home";
 import LogIn from "../Pages/Login/LogIn";
+
+import MyToys from "../Pages/MyToys/MyToys";
 import SignUp from "../Pages/Register/SignUp";
 import ToyDetails from "../Pages/ToyDetails/ToyDetails";
+import PrivateRoutes from "./PrivateRoutes";
 
 
 const router = createBrowserRouter([
@@ -37,21 +41,25 @@ const router = createBrowserRouter([
       },
       {
         path: '/alltoys',
-        element: <AllToys></AllToys>
+        element: <PrivateRoutes><AllToys></AllToys></PrivateRoutes>
       },
       {
         path: "/toydetails/:id",
         element: <ToyDetails></ToyDetails>,
         loader: ({ params }) => fetch(`http://localhost:5000/toyinfo/${params.id}`)
       },
-      // {
-      //   path:"/mytoys",
-      //   element: <MyToy></MyToy>
-      // },
+      {
+        path: "/mytoys",
+        element: <PrivateRoutes><MyToys></MyToys></PrivateRoutes>
+      },
 
       {
         path: "/review",
         element: <Reviews></Reviews>
+      },
+      {
+        path: "/connectus",
+        element: <ConnectUs></ConnectUs>
       }
     ]
   },

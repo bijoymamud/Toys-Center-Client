@@ -36,6 +36,10 @@ const Navbar = () => {
       <Link to="/alltoys">All Toys</Link>
 
     </li>
+    <li tabIndex={0}>
+      <Link to="/mytoys">My Toys</Link>
+
+    </li>
 
   </>
   return (
