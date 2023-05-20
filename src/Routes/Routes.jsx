@@ -3,6 +3,7 @@ import Main from "../Layout/Main";
 import About from "../Pages/About/About";
 import AddToy from "../Pages/AddToy/AddToy";
 import AllToys from "../Pages/All Toys/AllToys";
+import Reviews from "../Pages/CustomesRe/Reviews";
 import Home from "../Pages/Home/Home/Home";
 import LogIn from "../Pages/Login/LogIn";
 import SignUp from "../Pages/Register/SignUp";
@@ -46,7 +47,12 @@ const router = createBrowserRouter([
       // {
       //   path:"/mytoys",
       //   element: <MyToy></MyToy>
-      // }
+      // },
+
+      {
+        path: "/review",
+        element: <Reviews></Reviews>
+      }
     ]
   },
   {

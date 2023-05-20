@@ -1,3 +1,4 @@
+import Reviews from "../../CustomesRe/Reviews";
 import Gallery from "../../Gallery/Gallery";
 import Tabls from "../../Tabs/Tabls";
 import Banner from "../Banner/Banner";
@@ -10,6 +11,7 @@ const Home = () => {
       <Banner></Banner>
       <Gallery></Gallery>
       <Tabls></Tabls>
+      <Reviews></Reviews>
 
 
     </div>
