@@ -1,6 +1,4 @@
 
-
-
 const Banner = () => {
 
 
@@ -10,8 +8,10 @@ const Banner = () => {
         <img src="https://m.media-amazon.com/images/I/61taLUjwxCL._SL1457_.jpg" className="w-full rounded-lg" />
         <div className="absolute rounded-lg flex items-center left-0 top-0 bottom-0 bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)]">
           <div className="text-white pl-24  space-y-7 w-1/2">
-            <h2 className="text-6xl font-bold">Delivering Exhilarating Fun For All Ages.</h2>
-            <p>A sleek and futuristic toy car with turbocharged engines, it zooms across the floor, leaving a trail of excitement in its wake.</p>
+            <div data-aos="fade-right">
+              <h2 className="text-6xl font-bold">Delivering Exhilarating Fun For All Ages.</h2>
+              <p>A sleek and futuristic toy car with turbocharged engines, it zooms across the floor, leaving a trail of excitement in its wake.</p>
+            </div>
             <div className="mt-5">
               <button className="btn  bg-red-600 border-none text-white hover:bg-white hover:text-black mr-5">Order Now</button>
               <button className="btn btn-outline text-white border-white hover:text-black hover:bg-white hover:text-back">Contact us</button>
@@ -28,8 +28,10 @@ const Banner = () => {
         <img src="https://www.dealsdirect.co.nz/wp-content/uploads/2021/07/602_1477-scaled.jpg" className="w-full rounded-lg" />
         <div className=" rounded-lg absolute flex items-center left-0 top-0 bottom-0 bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)]">
           <div className="text-white pl-24  space-y-7 w-1/2">
-            <h2 className="text-6xl font-bold">Delivering Exhilarating Fun For All Ages.</h2>
-            <p>A sleek and futuristic toy car with turbocharged engines, it zooms across the floor, leaving a trail of excitement in its wake.</p>
+            <div data-aos="fade-right">
+              <h2 className="text-6xl font-bold">Delivering Exhilarating Fun For All Ages.</h2>
+              <p>A sleek and futuristic toy car with turbocharged engines, it zooms across the floor, leaving a trail of excitement in its wake.</p>
+            </div>
             <div className="mt-5">
               <button className="btn  bg-red-600 border-none text-white hover:bg-white hover:text-black mr-5">Order Now</button>
               <button className="btn btn-outline text-white border-white hover:text-black hover:bg-white hover:text-back">Contact us</button>
@@ -46,8 +48,10 @@ const Banner = () => {
         <img src="https://images.unsplash.com/photo-1560260369-3eea8c1f8b74?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHN3fGVufDB8fDB8fA%3D%3D&w=1000&q=80" className="w-full rounded-lg" />
         <div className="absolute flex items-center left-0 top-0 bottom-0 bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)] rounded-lg">
           <div className="text-white pl-24  space-y-7 w-1/2">
-            <h2 className="text-6xl font-bold">Delivering Exhilarating Fun For All Ages.</h2>
-            <p>A sleek and futuristic toy car with turbocharged engines, it zooms across the floor, leaving a trail of excitement in its wake.</p>
+            <div data-aos="fade-right">
+              <h2 className="text-6xl font-bold">Delivering Exhilarating Fun For All Ages.</h2>
+              <p>A sleek and futuristic toy car with turbocharged engines, it zooms across the floor, leaving a trail of excitement in its wake.</p>
+            </div>
             <div className="mt-5">
               <button className="btn  bg-red-600 border-none text-white hover:bg-white hover:text-black mr-5">Order Now</button>
               <button className="btn btn-outline text-white border-white hover:text-black hover:bg-white hover:text-back">Contact us</button>
@@ -64,8 +68,10 @@ const Banner = () => {
         <img src="https://rare-gallery.com/uploads/posts/535359-automobile-car.jpg" className="w-full rounded-lg" />
         <div className="absolute flex items-center left-0 top-0 bottom-0 bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)] rounded-lg">
           <div className="text-white pl-24  space-y-7 w-1/2">
-            <h2 className="text-6xl font-bold">Delivering Exhilarating Fun For All Ages.</h2>
-            <p>A sleek and futuristic toy car with turbocharged engines, it zooms across the floor, leaving a trail of excitement in its wake.</p>
+            <div data-aos="fade-right">
+              <h2 className="text-6xl font-bold">Delivering Exhilarating Fun For All Ages.</h2>
+              <p>A sleek and futuristic toy car with turbocharged engines, it zooms across the floor, leaving a trail of excitement in its wake.</p>
+            </div>
             <div className="mt-5">
               <button className="btn  bg-red-600 border-none text-white hover:bg-white hover:text-black mr-5">Order Now</button>
               <button className="btn btn-outline text-white border-white hover:text-black hover:bg-white hover:text-back">Contact us</button>

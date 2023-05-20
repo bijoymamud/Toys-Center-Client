@@ -8,6 +8,7 @@ const AllToys = () => {
   useEffect(() => {
     fetch("http://localhost:5000/toyinfo")
 
+
       .then(res => res.json())
       .then(data => setToys(data))
 

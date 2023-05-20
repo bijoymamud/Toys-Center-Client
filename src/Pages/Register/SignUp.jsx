@@ -78,8 +78,8 @@ const SignUp = () => {
                 <label className=' text-xl mb-2 w-1/2 ' htmlFor="password">Password</label>
                 <input type="password" placeholder="Enter email" name='password' className="input input-bordered input-primary w-full mb-5" required />
 
-                {/* <label className=' text-xl mb-2 w-1/2 ' htmlFor="confirm">Confirm Password</label>
-                <input type="password" placeholder="Enter email" name='confirm' className="input input-bordered input-primary w-full  mb-5" required /> */}
+                <label className=' text-xl mb-2 w-1/2 ' htmlFor="confirm">Confirm Password</label>
+                <input type="password" placeholder="Enter email" name='confirm' className="input input-bordered input-primary w-full  mb-5" required />
 
                 {/* <input className='signup-btn'>Log In</input> */}
 
