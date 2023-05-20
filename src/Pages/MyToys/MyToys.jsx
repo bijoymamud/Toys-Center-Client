@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import Swal from 'sweetalert2';
 import { AuthContext } from '../providers/AuthProviders';
 import MyToysRow from './MyToysRow';
 
@@ -13,6 +14,50 @@ const MyToys = () => {
       .then(data => setToysEmail(data))
 
   }, [user])
+
+  const handleDelteToy = id => {
+    // const proceed = confirm("Are you sure to delete? ");
+    // if (proceed) {
+    //   fetch(``)
+    //     .then(res => res.json())
+    //     .then(data => {
+    //       console.log(data);
+    //     })
+
+    // }
+
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/toyinfo/${id}`, {
+          method: "DELETE"
+        })
+          .then(res => res.json())
+          .then(data => {
+            console.log(data);
+
+            if (data.deletedCount > 0) {
+              Swal.fire(
+                'Deleted!',
+                'Your file has been deleted.',
+                'success',
+
+              )
+              const remaining = toysEmail.filter(toyEmail => toyEmail._id !== id)
+              setToysEmail(remaining);
+            }
+          })
+
+      }
+    })
+  }
 
   console.log(toysEmail);
 
@@ -29,12 +74,13 @@ const MyToys = () => {
               <th>
 
               </th>
-              <th>Saller</th>
+              <th >Image</th>
               <th>Toy Name</th>
               <th>Sub Category</th>
               <th>Price</th>
-              <th>Quantity</th>
-              <th>Info</th>
+              <th></th>
+
+
             </tr>
           </thead>
           <tbody>
@@ -44,6 +90,7 @@ const MyToys = () => {
               toysEmail.map(toyEmail => <MyToysRow
                 key={toyEmail._id}
                 toyEmail={toyEmail}
+                handleDelteToy={handleDelteToy}
               ></MyToysRow>)
             }
 
