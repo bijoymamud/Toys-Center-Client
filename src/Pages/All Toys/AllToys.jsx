@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Toy from '../Toy/Toy';
+import ToyRow from '../Toy/ToyRow';
 
 const AllToys = () => {
 
@@ -19,12 +19,39 @@ const AllToys = () => {
     <div>
       <h3>All toys are shown here{toys.length}</h3>
 
-      {
-        toys.map(toy => <Toy
-          key={toy._id}
-          toy={toy}
-        ></Toy>)
-      }
+      <div className="overflow-x-auto w-full">
+        <table className="table w-full">
+          {/* head */}
+          <thead>
+            <tr>
+              <th>
+                <label>
+                  <input type="checkbox" className="checkbox" />
+                </label>
+              </th>
+              <th>Name</th>
+              <th>Job</th>
+              <th>Favorite Color</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+
+
+            {
+              toys.map(toy => <ToyRow
+                key={toy._id}
+                toy={toy}
+              ></ToyRow>)
+            }
+
+          </tbody>
+
+
+        </table>
+      </div>
+
+
     </div>
   );
 };
