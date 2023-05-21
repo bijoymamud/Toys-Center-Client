@@ -34,12 +34,16 @@ const Navbar = () => {
     </li>
     <li tabIndex={0}>
       <Link to="/alltoys">All Toys</Link>
-
     </li>
-    <li tabIndex={0}>
-      <Link to="/mytoys">My Toys</Link>
+    {user &&
 
-    </li>
+
+      <li tabIndex={0}>
+        <Link to="/mytoys">My Toys</Link>
+
+      </li>
+
+    }
 
   </>
   return (
