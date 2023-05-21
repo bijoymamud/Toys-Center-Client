@@ -6,10 +6,12 @@ import { FaGoogle } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import useTitle from '../../hooks/useTitle';
 import { AuthContext } from '../providers/AuthProviders';
 
 const LogIn = () => {
 
+  useTitle("Toys Center|Login")
   const [show, setShow] = useState(false);
   const [error, setError] = useState('');
 

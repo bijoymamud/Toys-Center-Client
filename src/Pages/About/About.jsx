@@ -1,6 +1,9 @@
 import React from 'react';
 import { FaAngleDoubleRight } from "react-icons/fa";
+import useTitle from '../../hooks/useTitle';
 const About = () => {
+
+  useTitle("Toys Center|About")
   return (
     <div className='mb-20 mt-16'>
       <div className='flex items-center justify-around gap-20 p-5'>

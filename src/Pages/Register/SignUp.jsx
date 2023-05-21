@@ -2,9 +2,11 @@
 
 import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 import { AuthContext } from '../providers/AuthProviders';
 
 const SignUp = () => {
+  useTitle("Toys Center|SignUp")
   const navigate = useNavigate();
   const [error, setError] = useState('');
   const { createUser, updateProfilePic } = useContext(AuthContext);

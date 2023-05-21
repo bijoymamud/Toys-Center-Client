@@ -28,10 +28,11 @@ const Navbar = () => {
       <Link to="/blogs">Blogs</Link>
 
     </li>
-    <li tabIndex={0}>
-      <Link to="/addtoy">Add Toy</Link>
+    {user &&
+      <li tabIndex={0}>
+        <Link to="/addtoy">Add Toy</Link>
 
-    </li>
+      </li>}
     <li tabIndex={0}>
       <Link to="/alltoys">All Toys</Link>
     </li>

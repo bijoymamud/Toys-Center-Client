@@ -8,8 +8,9 @@ import ConnectUs from "../Pages/GiveMessage/ConnectUs";
 import Home from "../Pages/Home/Home/Home";
 import LogIn from "../Pages/Login/LogIn";
 
+import Blogs from "../Pages/Blogs/Blogs";
+import Error from "../Pages/ErrorPage/Error";
 import MyToys from "../Pages/MyToys/MyToys";
-
 import PhGallery from "../Pages/PhGallery/PhGallery";
 import SignUp from "../Pages/Register/SignUp";
 import ToyDetails from "../Pages/ToyDetails/ToyDetails";
@@ -30,6 +31,11 @@ const router = createBrowserRouter([
         element: <LogIn></LogIn>
       },
       {
+        path: "/blogs",
+        element: <Blogs></Blogs>
+
+      },
+      {
         path: '/signup',
         element: <SignUp></SignUp>
       },
@@ -37,6 +43,7 @@ const router = createBrowserRouter([
         path: '/about',
         element: <About></About>
       },
+
       {
         path: '/addtoy',
         element: <PrivateRoutes> <AddToy></AddToy></PrivateRoutes>
@@ -66,12 +73,16 @@ const router = createBrowserRouter([
       {
         path: "phGallery",
         element: <PhGallery></PhGallery>
-      }
+      },
+
+
     ]
   },
   {
-
+    path: "*",
+    element: <Error></Error>
   }
+
 ]);
 
 export default router;
