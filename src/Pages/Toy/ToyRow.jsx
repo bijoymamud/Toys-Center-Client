@@ -37,7 +37,9 @@ const ToyRow = ({ toy }) => {
 
         <Link to={`/toydetails/${_id}`}><button className="btn btn-ghost btn-xs">details</button></Link>
       </th>
+     
     </tr>
+
 
   )
 }

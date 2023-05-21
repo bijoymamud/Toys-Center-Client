@@ -6,6 +6,9 @@ const AllToys = () => {
   useTitle("Toys Center|All Toys")
 
   const [toys, setToys] = useState([]);
+  const [showAllData, setshowAllData] = useState(false);
+  const [displayCount, setDisplayCount] = useState(20);
+  const [search, setSearch] = useState("")
 
   useEffect(() => {
     fetch("http://localhost:5000/toyinfo")
@@ -18,9 +21,22 @@ const AllToys = () => {
 
 
   }, [])
+
+  const handlingSeeMore = () => {
+    setshowAllData(true);
+    setDisplayCount(toys.length)
+
+  }
   return (
-    <div>
-      <h3>All toys are shown here{toys.length}</h3>
+    <div className='md:mt-20 md:mb-32'>
+
+      <h2 className='text-center text-4xl font-bold mb-5'>Toys Collections</h2>
+
+      <div className='mt-5 mb-10 text-end'>
+        <input type="text" placeholder="Type here" className="input w-full max-w-xs bg-slate-200 mr-2" /><button
+        
+        className='btn btn-outline btn-accent'>Search</button>
+      </div>
 
       <div className="overflow-x-auto w-full">
         <table className="table w-full">
@@ -42,7 +58,7 @@ const AllToys = () => {
 
 
             {
-              toys.map(toy => <ToyRow
+              toys.slice(0, displayCount).map(toy => <ToyRow
                 key={toy._id}
                 toy={toy}
               ></ToyRow>)
@@ -54,7 +70,9 @@ const AllToys = () => {
         </table>
       </div>
 
-
+      {!showAllData && <div className='text-center mt-5 mb-24'>
+        <button onClick={handlingSeeMore} className='btn btn-wide'>See More</button>
+      </div>}
     </div>
   );
 };
