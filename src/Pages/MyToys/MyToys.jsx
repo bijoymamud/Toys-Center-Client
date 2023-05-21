@@ -61,7 +61,28 @@ const MyToys = () => {
 
   console.log(toysEmail);
 
+  const handleConfirm = (id) => {
+    fetch(`http://localhost:5000/toyinfo/${id}`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
 
+      },
+      body: JSON.stringify({ status: "confirm" })
+
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        if (data.modifiedCount > 0) {
+          const remaining = toysEmail.filter(toyEmail => toyEmail._id !== id);
+          const updated = toysEmail.find(toyEmail => toyEmail._id === id);
+          updated.status = "Successful"
+          const newData = [updated, ...remaining];
+          setToysEmail(newData);
+        }
+      })
+  }
   return (
     <div>
       {/* <h3>All toys are shown here{toys.length}</h3> */}
@@ -91,6 +112,7 @@ const MyToys = () => {
                 key={toyEmail._id}
                 toyEmail={toyEmail}
                 handleDelteToy={handleDelteToy}
+                handleConfirm={handleConfirm}
               ></MyToysRow>)
             }
 

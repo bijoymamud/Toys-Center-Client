@@ -9,6 +9,8 @@ import Home from "../Pages/Home/Home/Home";
 import LogIn from "../Pages/Login/LogIn";
 
 import MyToys from "../Pages/MyToys/MyToys";
+
+import PhGallery from "../Pages/PhGallery/PhGallery";
 import SignUp from "../Pages/Register/SignUp";
 import ToyDetails from "../Pages/ToyDetails/ToyDetails";
 import PrivateRoutes from "./PrivateRoutes";
@@ -60,6 +62,10 @@ const router = createBrowserRouter([
       {
         path: "/connectus",
         element: <ConnectUs></ConnectUs>
+      },
+      {
+        path: "phGallery",
+        element: <PhGallery></PhGallery>
       }
     ]
   },
