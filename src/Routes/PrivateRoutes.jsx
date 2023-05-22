@@ -13,7 +13,14 @@ const PrivateRoutes = ({ children }) => {
   if (user?.email) {
     return children;
   }
-  return <Navigate to="/login" replace></Navigate>
+
+  else {
+    alert('You have to login');
+    return <Navigate to="/login" replace></Navigate>
+
+  }
+
+
 };
 
 export default PrivateRoutes;

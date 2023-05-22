@@ -15,36 +15,38 @@ const Navbar = () => {
 
   const navItems = <>
 
+
     <li tabIndex={0}>
-      <Link to="/">Home</Link>
+      <Link className='font-bold' to="/">Home</Link>
 
     </li>
     <li tabIndex={0}>
-      <Link to="/about">About</Link>
+      <Link className='font-bold' to="/about">About</Link>
 
     </li>
 
     <li tabIndex={0}>
-      <Link to="/blogs">Blogs</Link>
+      <Link className='font-bold' to="/blogs">Blogs</Link>
 
     </li>
     {user &&
       <li tabIndex={0}>
-        <Link to="/addtoy">Add Toy</Link>
+        <Link className='font-bold' to="/addtoy">Add Toy</Link>
 
       </li>}
     <li tabIndex={0}>
-      <Link to="/alltoys">All Toys</Link>
+      <Link className='font-bold' to="/alltoys">All Toys</Link>
     </li>
     {user &&
 
 
       <li tabIndex={0}>
-        <Link to="/mytoys">My Toys</Link>
+        <Link className='font-bold' to="/mytoys">My Toys</Link>
 
       </li>
 
     }
+
 
   </>
   return (
@@ -60,7 +62,7 @@ const Navbar = () => {
 
           </ul>
         </div>
-        <a className=" normal-case text-xl">Toys Center</a>
+        <img className='w-1/4' src="https://i.ibb.co/3sF0n3Q/Black-Minimalist-Letter-A-Logo.png" alt="" />
 
       </div>
       <div className="navbar-center hidden lg:flex">

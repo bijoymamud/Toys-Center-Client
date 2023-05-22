@@ -89,24 +89,24 @@ const MyToys = () => {
     <div>
       {/* <h3>All toys are shown here{toys.length}</h3> */}
 
-      <div className="overflow-x-auto w-full">
+      <div className="overflow-x-auto w-full md:mt-24 md:mb-36 ">
+        <h2 className='text-center mb-10 text-4xl font-bold text-slate-500 '>My Toys Collection</h2>
         <table className="table w-full">
           {/* head */}
           <thead>
             <tr>
-              <th>
 
-              </th>
               <th >Image</th>
               <th>Toy Name</th>
               <th>Sub Category</th>
               <th>Price</th>
-              <th></th>
+
 
 
             </tr>
           </thead>
-          <tbody>
+          <tbody >
+
 
 
             {
@@ -117,6 +117,7 @@ const MyToys = () => {
                 handleConfirm={handleConfirm}
               ></MyToysRow>)
             }
+
 
           </tbody>
 

@@ -7,8 +7,8 @@ const AllToys = () => {
 
   const [toys, setToys] = useState([]);
   const [showAllData, setshowAllData] = useState(false);
-  const [displayCount, setDisplayCount] = useState(20);
-  const [search, setSearch] = useState("")
+  const [displayCount, setDisplayCount] = useState(6);
+  const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
     fetch("http://localhost:5000/toyinfo")
@@ -17,30 +17,39 @@ const AllToys = () => {
       .then(res => res.json())
       .then(data => setToys(data))
 
-
-
-
   }, [])
+
+  const handleSearch = () => {
+    fetch(`http://localhost:5000/getToysByText/${searchText}`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setToys(data);
+      });
+  };
 
   const handlingSeeMore = () => {
     setshowAllData(true);
     setDisplayCount(toys.length)
 
   }
+
+
+
   return (
     <div className='md:mt-20 md:mb-32'>
 
       <h2 className='text-center text-4xl font-bold mb-5'>Toys Collections</h2>
 
       <div className='mt-5 mb-10 text-end'>
-        <input type="text" placeholder="Type here" className="input w-full max-w-xs bg-slate-200 mr-2" /><button
-        
-        className='btn btn-outline btn-accent'>Search</button>
+        <input onChange={(e) => setSearchText(e.target.value)}
+          type="text" placeholder="Type here" className="input w-full max-w-xs bg-slate-200 mr-2" /><button
+            onClick={handleSearch}
+            className='btn btn-outline btn-accent'>Search</button>
       </div>
 
       <div className="overflow-x-auto w-full">
         <table className="table w-full">
-          {/* head */}
           <thead>
             <tr>
               <th>

@@ -14,6 +14,7 @@ import MyToys from "../Pages/MyToys/MyToys";
 import PhGallery from "../Pages/PhGallery/PhGallery";
 import SignUp from "../Pages/Register/SignUp";
 import ToyDetails from "../Pages/ToyDetails/ToyDetails";
+import UpdateToys from "../Pages/UpdateToys/UpdateToys";
 import PrivateRoutes from "./PrivateRoutes";
 
 
@@ -74,7 +75,16 @@ const router = createBrowserRouter([
         path: "phGallery",
         element: <PhGallery></PhGallery>
       },
+      {
+        // path: "/updateToys/:id",
+        // element: <UpdateToys></UpdateToys>,
+        // loader: ({ params }) => fetch(`http://localhost:5000/toyinfo/${params.id}`)
 
+        path: "/updateToys/:id",
+        element: <UpdateToys></UpdateToys>,
+
+
+      }
 
     ]
   },

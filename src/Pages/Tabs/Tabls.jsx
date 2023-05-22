@@ -1,24 +1,98 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import TabsSubCat from '../TabsSubCat/TabsSubCat';
 const Tabls = () => {
+
+  const [tabToys, setTabToys] = useState([]);
+  const [remote, setRemote] = useState(true);
+  const [automatic, setAutomatic] = useState(false);
+  const [racing, setRacing] = useState(false);
+
+
+
+  useEffect(() => {
+    fetch("http://localhost:5000/toyinfo")
+
+
+      .then(res => res.json())
+      .then(data => setTabToys(data))
+
+  }, [])
+
+
+  const subToyData = tabToys.filter((toys) => {
+    if (remote) {
+      return toys.category === "Remote Control";
+    }
+    if (automatic) {
+      return toys.category === "AutoMatic Control";
+    }
+    if (racing) {
+      return toys.category === "Dummy Racing";
+    }
+
+  });
+
+  const filterToyData = subToyData.slice(0, 3)
   return (
     <div>
       <Tabs>
         <TabList>
-          <Tab>Title 1</Tab>
-          <Tab>Title 2</Tab>
-          <Tab>Title 2</Tab>
+          <Tab onClick={() => {
+            setRemote(true);
+            setAutomatic(false);
+            setRacing(false)
+
+          }}
+          >Remote Control</Tab>
+          <Tab
+            onClick={() => {
+              setRemote(false);
+              setAutomatic(true);
+              setRacing(false)
+
+            }}>AutoMatic Control</Tab>
+          <Tab onClick={() => {
+            setRemote(false);
+            setAutomatic(false);
+            setRacing(true)
+
+          }}>Dummy Racing</Tab>
         </TabList>
 
         <TabPanel>
-          <h2>3Cards</h2>
+          <div className='grid md:grid-cols-3 gap-5'>
+            {
+              filterToyData.map((toys) => <TabsSubCat
+                key={toys._id}
+                toys={toys}
+
+              ></TabsSubCat>)
+            }
+          </div>
         </TabPanel>
         <TabPanel>
-          <h2>3Cards</h2>
+          <div className='grid md:grid-cols-3 gap-5'>
+            {
+              filterToyData.map((toys) => <TabsSubCat
+                key={toys._id}
+                toys={toys}
+
+              ></TabsSubCat>)
+            }
+          </div>
         </TabPanel>
         <TabPanel>
-          <h2>3Cards</h2>
+          <div className='grid md:grid-cols-3 gap-5'>
+            {
+              filterToyData.map((toys) => <TabsSubCat
+                key={toys._id}
+                toys={toys}
+
+              ></TabsSubCat>)
+            }
+          </div>
         </TabPanel>
       </Tabs>
     </div>
