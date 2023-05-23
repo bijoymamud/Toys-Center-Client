@@ -4,12 +4,12 @@ const PhGallery = () => {
 
 
   return (
-    <div className=" md:mb-44 ">
-      <h2 className='text-5xl text-center font-bold text-slate-500 md:mt-44 md:mb-10 '>Gallery</h2>
-      <section className="p-5  bg-slate-100  
-      dark:text-gray-50">
+    <div className=" mb-24 md:mb-44">
+      <h2 className=' text-4xl mb-5 mt-24 md:text-5xl text-center font-bold  md:mt-44 md:mb-10 '>Gallery</h2>
+      <section className="p-5 mx-2 bg-slate-100  
+      dark:text-gray-50 rounded-xl">
 
-        <div className="container grid grid-cols-2 gap-4 p-4 mx-auto md:grid-cols-4">
+        <div className="container grid grid-cols-2 gap-4 md:p-4 mx-auto md:grid-cols-4">
           <img data-aos="fade-left" src="https://images.augustman.com/wp-content/uploads/sites/6/2023/02/09095603/Lamborghini_one-offs.jpg" alt="" className="w-full h-full col-span-2 row-span-2 rounded shadow-sm min-h-96 md:col-start-3 md:row-start-1 dark:bg-gray-500 aspect-square" />
           <img data-aos="fade-left" alt="" className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square" src="https://ts2.mm.bing.net/th?q=Hot%20Wheels%20Forza%20Horizon%204%20Lamborghini%20Veneno%2056,%20Gray" />
           <img data-aos="fade-left" alt="" className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square" src="https://m.media-amazon.com/images/I/614EUV+CusL._AC_UF894,1000_QL80_.jpg" />

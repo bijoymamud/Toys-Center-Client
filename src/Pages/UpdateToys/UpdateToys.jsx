@@ -1,7 +1,9 @@
-import { useParams } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const UpdateToys = () => {
-
+  const allDetails = useLoaderData();
+  const { customerName, toyName, category, photo, price, quantity, description, rating } = allDetails;
   // const toysData = useLoaderData();
   // const { toyName } = toysData;
   const toysData = useParams();
@@ -33,19 +35,51 @@ const UpdateToys = () => {
 
   }
 
+  const updatePrice = () => {
 
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Updated',
+      showConfirmButton: true,
+      timer: 1500
+    })
+  }
 
   return (
 
-    <div className="md:mt-24 md:mb-96">
-      <h2 className="text-4xl text-center md:mb-10 font-bold text-slate-600">Update Your Product</h2>
-      <form onSubmit={updateHandler} className="text-center">
-        <input type="number" placeholder="Price" name="price" className="input w-full max-w-xs bg-slate-200 mr-5" />
-        <input type="number" name="quantity" placeholder="Quantity" className="input w-full max-w-xs bg-slate-200" /> <br />
-        <input type="text" name="description" placeholder="Details" className="input w-full max-w-xs bg-slate-200 mt-5" /> <br />
-        <input className="btn border-none h-full mt-5  text-white" type="submit" value="Update Price" />
-      </form>
-    </div>
+
+
+    <form onSubmit={updateHandler} className="w-1/4 mx-auto md:mt-24">
+      <div className="form-control ">
+        <label className="label">
+          <span className="label-text">Price</span>
+
+        </label>
+        <input type="number" name="price" defaultValue={price} placeholder="Price" className="input input-bordered w-full max-w-xs" />
+
+      </div>
+      <div className="form-control w-full max-w-xs">
+        <label className="label">
+          <span className="label-text">Quantity</span>
+
+        </label>
+        <input type="number" name="quantity" defaultValue={quantity} placeholder="Quantity" className="input input-bordered w-full max-w-xs" />
+
+      </div>
+      <div className="form-control w-full max-w-xs">
+        <label className="label">
+          <span className="label-text">Description</span>
+
+        </label>
+        <input type="text" name="description" defaultValue={description} placeholder="Description" className="input input-bordered w-full max-w-xs" />
+
+      </div>
+
+      <button onClick={updatePrice} className="btn btn-outline text-center mt-5 md:mb-96">Update Price</button>
+
+    </form>
+
   );
 };
 

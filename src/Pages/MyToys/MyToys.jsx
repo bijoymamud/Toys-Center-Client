@@ -17,6 +17,11 @@ const MyToys = () => {
 
   }, [user])
 
+  const handleJobUpdate = (data) => {
+    console.log(data);
+
+  }
+
   const handleDelteToy = id => {
     // const proceed = confirm("Are you sure to delete? ");
     // if (proceed) {

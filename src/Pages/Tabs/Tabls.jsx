@@ -37,8 +37,8 @@ const Tabls = () => {
   const filterToyData = subToyData.slice(0, 3)
   return (
     <div>
-      <Tabs>
-        <TabList>
+      <Tabs className="text-center mx-2">
+        <TabList className="mb-10">
           <Tab onClick={() => {
             setRemote(true);
             setAutomatic(false);
@@ -62,7 +62,7 @@ const Tabls = () => {
         </TabList>
 
         <TabPanel>
-          <div className='grid md:grid-cols-3 gap-5'>
+          <div className='grid grid-cols-1 md:grid-cols-3 gap-5 '>
             {
               filterToyData.map((toys) => <TabsSubCat
                 key={toys._id}

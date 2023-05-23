@@ -30,7 +30,7 @@ const ToyDetails = () => {
             </h2>
             <p>{description}</p>
             <p>Category : {category}</p>
-            <p>Price: ${price}.00</p>
+            <p>Price: {'$' + price}.00</p>
             <p>Quantity: {quantity}</p>
             <p>Seller: {customerName}</p>
             <div>

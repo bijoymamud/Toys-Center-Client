@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
+import { FaStar } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import LogIn from '../Login/LogIn';
 import { AuthContext } from '../providers/AuthProviders';
 
 const TabsSubCat = ({ toys }) => {
@@ -14,18 +14,18 @@ const TabsSubCat = ({ toys }) => {
 
     }
     else {
-      alert("You Have to login ");
-      <LogIn></LogIn>
+      alert("You Have to login first ");
+
     }
   }
   return (
-    <div>
-      <div className="max-w-xs p-6 rounded-md shadow-md dark:bg-slate-500 dark:text-gray-50">
-        <img src={photo} alt="" className="object-cover object-center w-full rounded-md h-72 dark:bg-gray-500" />
+    <div className='text-start mb-24'>
+      <div className="lg:max-w-xs p-6 rounded-md shadow-md   dark:bg-gray-900  ">
+        <img src={photo} alt="" className="object-cover object-center w-full rounded-md h-72 dark:bg-gray-900" />
         <div className="mt-6 mb-2">
-          <span className="block text-xs font-medium tracking-widest uppercase dark:text-violet-400">{toyName}</span>
+          <span className="block text-xs font-medium tracking-widest uppercase text-white">{toyName}</span>
           <span className="block text-xs font-medium tracking-widest uppercase dark:text-violet-400">Price: ${price}</span>
-          <span className="block text-xs font-medium tracking-widest uppercase dark:text-violet-400">Rating: {rating}</span>
+          <div className=" flex items-center gap-1 text-xs font-medium tracking-widest uppercase dark:text-violet-400">Rating: {rating}<FaStar className='text-yellow-400'></FaStar></div>
 
         </div>
 

@@ -52,10 +52,13 @@ const AddToy = () => {
             icon: 'success',
             title: 'Added Successfully',
             showConfirmButton: true,
-            timer: 1500
+            timer: 1500,
+
           })
 
+
         }
+        form.reset()
       })
   }
 
@@ -66,10 +69,10 @@ const AddToy = () => {
 
 
 
-      <div >
+      <div className="md:mt-24" >
 
         <div className="card flex-shrink-0 w-full p-10 shadow-2xl bg-base-100">
-          <h3 className="text-center">This is Add toy section</h3>
+          <h3 className="text-center text-4xl font-bold" >Post your Add Here</h3>
           <form onSubmit={handleToyInfoSubmit} >
             <div className="card-body  ">
               <div >
@@ -147,7 +150,7 @@ const AddToy = () => {
                   <div className="form-control mt-6">
 
 
-                    <input className="btn border-none h-full bg-red-600 text-white" type="submit" value="Place Order" />
+                    <input className="btn border-none h-full bg-red-600 text-white" type="submit" value="Add Toy" />
                   </div>
 
                 </div>

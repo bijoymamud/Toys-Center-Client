@@ -3,16 +3,16 @@ const Banner = () => {
 
 
   return (
-    <div className="carousel w-full h-[700px]">
-      <div id="slide1" className="carousel-item relative w-full">
-        <img src="https://m.media-amazon.com/images/I/61taLUjwxCL._SL1457_.jpg" className="w-full rounded-lg" />
+    <div className="carousel md:w-full md:h-[700px] mx-2">
+      <div id="slide1" className="carousel-item relative md:w-full ">
+        <img src="https://m.media-amazon.com/images/I/61taLUjwxCL._SL1457_.jpg" className=" w-2/4 md:w-full rounded-lg" />
         <div className="absolute rounded-lg flex items-center left-0 top-0 bottom-0 bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)]">
-          <div className="text-white pl-24  space-y-7 w-1/2">
-            <div data-aos="fade-right">
-              <h2 className="text-6xl font-bold">Delivering Exhilarating Fun For All Ages.</h2>
-              <p>A sleek and futuristic toy car with turbocharged engines, it zooms across the floor, leaving a trail of excitement in its wake.</p>
+          <div className="text-white px-2 md:pl-24  md:space-y-7 md:w-1/2">
+            <div data-aos="fade-right " className="">
+              <h2 className="md:text-6xl font-bold">Delivering Exhilarating Fun For All Ages.</h2>
+              <p >A sleek and futuristic toy car with turbocharged engines, it zooms across the floor, leaving a trail of excitement in its wake.</p>
             </div>
-            <div className="mt-5">
+            <div className="mt-5 ">
               <button className="btn  bg-red-600 border-none text-white hover:bg-white hover:text-black mr-5">Order Now</button>
               <button className="btn btn-outline text-white border-white hover:text-black hover:bg-white hover:text-back">Contact us</button>
 
