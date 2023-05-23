@@ -1,6 +1,18 @@
 import React from 'react';
+import Swal from 'sweetalert2';
 
 const Gallery = () => {
+
+  const handleBuy = () => {
+
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Purchase Successful',
+      showConfirmButton: false,
+      timer: 1500
+    })
+  }
   return (
 
     <div>
@@ -19,7 +31,7 @@ const Gallery = () => {
               <p>If a man chews cars whose cars does he choose?</p>
               <div className="card-actions justify-end">
 
-                <div className="badge badge-outline">Buy Now</div>
+                <button onClick={handleBuy} className="btn btn-sm">Buy Now</button>
               </div>
             </div>
           </div>
@@ -34,7 +46,7 @@ const Gallery = () => {
               <div className="card-actions justify-end">
 
 
-                <div className="badge badge-outline">Buy Now</div>
+                <button onClick={handleBuy} className="btn btn-sm">Buy Now</button>
               </div>
             </div>
           </div>
@@ -48,7 +60,7 @@ const Gallery = () => {
               <p>If a man chews cars whose cars does he choose</p>
               <div className="card-actions justify-end">
 
-                <div className="badge badge-outline">Buy Now</div>
+                <button onClick={handleBuy} className="btn btn-sm">Buy Now</button>
               </div>
             </div>
           </div>
@@ -62,7 +74,7 @@ const Gallery = () => {
               <p>If a man chews cars whose cars does he choose</p>
               <div className="card-actions justify-end">
 
-                <div className="badge badge-outline">Buy Now</div>
+                <button onClick={handleBuy} className="btn btn-sm">Buy Now</button>
               </div>
             </div>
           </div>
@@ -76,7 +88,7 @@ const Gallery = () => {
               <p>If a dog chews shoes whose shoes does he choose?</p>
               <div className="card-actions justify-end">
 
-                <div className="badge badge-outline">Buy Now</div>
+                <button onClick={handleBuy} className="btn btn-sm">Buy Now</button>
               </div>
             </div>
           </div>
@@ -90,7 +102,7 @@ const Gallery = () => {
               <p>If a dog chews shoes whose shoes does he choose?</p>
               <div className="card-actions justify-end">
 
-                <div className="badge badge-outline">Buy Now</div>
+                <button onClick={handleBuy} className="btn btn-sm">Buy Now</button>
               </div>
             </div>
           </div>

@@ -31,7 +31,7 @@ const TabsSubCat = ({ toys }) => {
 
         {!user &&
           <Link to="/login" >
-            <button onClick={handleDetails} className='btn-outline'>View Details</button>
+            <button onClick={handleDetails} className=' btn btn-sm bg-white text-black'>View Details</button>
           </Link>}
 
 

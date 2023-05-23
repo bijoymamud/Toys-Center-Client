@@ -4,9 +4,9 @@ const Reviews = () => {
   return (
 
 
-    <div className="mb-36">
+    <div className="mb-36 mx-2">
       <h2 className=" mt-36 mb-20 text-center text-4xl font-bold" data-aos="fade-right ">Feedback From Our Customers</h2>
-      <div data-aos="fade-left " className="grid grid-cols- md:grid-cols-3 gap-20">
+      <div data-aos="fade-left " className="grid grid-cols- md:grid-cols-3 gap-5 md:gap-20">
         <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md divide-gray-700 dark:bg-gray-900 dark:text-gray-100">
           <div className="flex justify-between p-4">
             <div className="flex space-x-4">
@@ -33,7 +33,7 @@ const Reviews = () => {
           <div className="flex justify-between p-4">
             <div className="flex space-x-4">
               <div>
-                <img src="https://source.unsplash.com/100x100/?portrait" alt="" className="object-cover w-12 h-12 rounded-full dark:bg-gray-500" />
+                <img src="https://images.pexels.com/photos/1288182/pexels-photo-1288182.jpeg?cs=srgb&dl=pexels-jc-laurio-1288182.jpg&fm=jpg" alt="" className="object-cover w-12 h-12 rounded-full dark:bg-gray-500" />
               </div>
               <div>
                 <h4 className="font-bold">Leroy Jenkins</h4>
@@ -55,7 +55,7 @@ const Reviews = () => {
           <div className="flex justify-between p-4">
             <div className="flex space-x-4">
               <div>
-                <img src="https://source.unsplash.com/100x100/?portrait" alt="" className="object-cover w-12 h-12 rounded-full dark:bg-gray-500" />
+                <img src="https://haircutinspiration.com/wp-content/uploads/10-Year-Old-Boy-e1573620504713-scaled.jpg" alt="" className="object-cover w-12 h-12 rounded-full dark:bg-gray-500" />
               </div>
               <div>
                 <h4 className="font-bold">Leroy Jenkins</h4>
