@@ -12,7 +12,7 @@ const Tabls = () => {
 
 
   useEffect(() => {
-    fetch("http://localhost:5000/toyinfo")
+    fetch("https://toys-center-server.vercel.app/toyinfo")
 
 
       .then(res => res.json())

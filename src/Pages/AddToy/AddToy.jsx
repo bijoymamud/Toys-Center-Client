@@ -36,7 +36,7 @@ const AddToy = () => {
     }
     console.log(order);
 
-    fetch('http://localhost:5000/toyinfo', {
+    fetch('https://toys-center-server.vercel.app/toyinfo', {
       method: "POST",
       headers: {
         'content-type': 'application/json'
@@ -93,8 +93,7 @@ const AddToy = () => {
                     <label className="label">
                       <span className="label-text">Seller Email</span>
                     </label>
-                    <input type="email" placeholder="Email"
-                      name='email' defaultValue={user?.email} className="input input-bordered" />
+                    <input type="email" required defaultValue={user?.email} className="input input-bordered" />
                   </div>
                   <div className="form-control w-full ">
                     <label className="label">
