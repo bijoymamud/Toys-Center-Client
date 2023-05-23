@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { FaStar } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import { AuthContext } from '../providers/AuthProviders';
 
 const TabsSubCat = ({ toys }) => {
@@ -14,7 +15,14 @@ const TabsSubCat = ({ toys }) => {
 
     }
     else {
-      alert("You Have to login first ");
+
+      Swal.fire({
+        position: 'Center',
+        icon: 'error',
+        title: 'You Have to Login First',
+        showConfirmButton: false,
+        timer: 1500
+      })
 
     }
   }
@@ -29,10 +37,10 @@ const TabsSubCat = ({ toys }) => {
 
         </div>
 
-        {!user &&
-          <Link to="/login" >
-            <button onClick={handleDetails} className=' btn btn-sm bg-white text-black'>View Details</button>
-          </Link>}
+
+        <Link to={`/toydetails/${_id}`} >
+          <button onClick={handleDetails} className=' btn btn-sm bg-white text-black hover:text-white hover:bg-gray-400'>View Details</button>
+        </Link>
 
 
       </div>

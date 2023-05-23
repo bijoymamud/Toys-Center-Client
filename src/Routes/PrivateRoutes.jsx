@@ -10,15 +10,27 @@ const PrivateRoutes = ({ children }) => {
     return <progress className="progress w-56"></progress>
   }
 
+
   if (user?.email) {
     return children;
   }
-
   else {
-    alert('You have to login');
-    return <Navigate to="/login" replace></Navigate>
 
+    // Swal.fire({
+    //   position: 'top-end',
+    //   icon: 'success',
+    //   title: 'Your work has been saved',
+    //   showConfirmButton: false,
+    //   timer: 1500
+    // })
+    return <Navigate to="/login" state={{ form: location }} replace={true} ></Navigate>
   }
+
+
+
+
+
+
 
 
 };

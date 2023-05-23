@@ -1,8 +1,19 @@
 import React from 'react';
+import Swal from 'sweetalert2';
 
 const ConnectUs = () => {
+
+  const requsetOnProcess = () => {
+    Swal.fire({
+      position: 'top-center',
+      icon: 'success',
+      title: 'Request Processing',
+      showConfirmButton: false,
+      timer: 3000
+    })
+  }
   return (
-    <div className='mb-24'>
+    <div className=''>
 
       <div className=''>
 
@@ -14,7 +25,7 @@ const ConnectUs = () => {
           </div>
           <p className='md:w-3/4 mb-5 font-semibold text-slate-600 mx-auto '>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas faucibus mollis interdum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
 
-          <button className='btn btn-wide'>Join Us</button>
+          <button onClick={requsetOnProcess} className='btn btn-wide'>Join Us</button>
         </div>
       </div>
 

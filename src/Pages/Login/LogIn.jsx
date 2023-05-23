@@ -6,6 +6,7 @@ import { FaGoogle } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Swal from 'sweetalert2';
 import useTitle from '../../hooks/useTitle';
 import { AuthContext } from '../providers/AuthProviders';
 
@@ -15,7 +16,7 @@ const LogIn = () => {
   const [show, setShow] = useState(false);
   const [error, setError] = useState('');
 
-  const { singIn, setUser, GoogleLogin, GithubLogin } = useContext(AuthContext);
+  const { singIn, setUser, GoogleLogin } = useContext(AuthContext);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -30,13 +31,7 @@ const LogIn = () => {
       .catch(error => console.log(error.message))
   }
 
-  const handleGithubLogin = () => {
-    GithubLogin()
-      .then(result => navigate(from, {
-        replace: true
-      }))
-      .catch(error => console.log(error.message))
-  }
+
 
   const handleLogIn = event => {
     //reload problem solver jonno
@@ -58,10 +53,17 @@ const LogIn = () => {
         console.log(loggesUser);
 
         setUser(loggesUser);
+        Swal.fire({
+          position: 'top-center',
+          icon: 'success',
+          title: 'Successfully Login',
+          showConfirmButton: false,
+          timer: 3000
+        })
 
-
+        navigate(from, { replace: true });
         form.reset();
-        navigate(from, { replace: true })
+
       })
       .catch(error => {
         setError("Incorrect Password");
